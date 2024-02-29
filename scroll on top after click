@@ -1,0 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var tabTitles = document.getElementsByClassName('elementor-tab-title');
+
+    for (var i = 0; i < tabTitles.length; i++) {
+        tabTitles[i].addEventListener('click', function(event) {
+            event.preventDefault();
+
+            var targetSection = document.querySelector('.elementor-tabs-content-wrapper');
+
+            if (targetSection) {
+                var offset = 200;
+                var targetTop = targetSection.getBoundingClientRect().top - offset;
+                
+                window.scrollTo({
+                    top: targetTop + window.pageYOffset,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
