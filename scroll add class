@@ -1,0 +1,7 @@
+ $(window).scroll(function(){
+    if ($(this).scrollTop() > 50) {
+       $('body').addClass('darkHeader');
+    } else {
+       $('body').removeClass('darkHeader');
+    }
+});
