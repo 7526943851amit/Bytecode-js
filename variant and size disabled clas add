@@ -1,0 +1,47 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const variantCombinations = document.querySelectorAll('.hide.custom-variant-combination > div');
+    const colorInputs = document.querySelectorAll('.variant-input input[name="Color"]');
+    const sizeInputs = document.querySelectorAll('.variant-input input[name="Size"]');
+
+    let availableColors = {};
+    let availableSizes = [];
+
+    // Determine available colors and sizes based on the variant combinations
+    variantCombinations.forEach(combination => {
+        const color = combination.getAttribute('data-variantname').split(' / ')[0];
+        const size = combination.getAttribute('data-variantname').split(' / ')[1];
+        const quantity = parseInt(combination.getAttribute('data-quantity'));
+
+  
+        if (quantity > 0) {
+            availableColors[color] = true;
+            if (!availableSizes.includes(size)) {
+                availableSizes.push(size);
+            }
+        }
+    });
+
+
+    colorInputs.forEach(input => {
+        const color = input.value.split(' / ')[0];
+        if (!availableColors[color]) {
+            // Hide the color input and its label
+            input.closest('.variant-input').style.display = 'none';
+        }
+    });
+
+
+    sizeInputs.forEach(input => {
+        const size = input.value;
+        if (!availableSizes.includes(size)) {
+            // Disable the size input and its label
+            input.classList.add('disabled');
+            input.disabled = true;
+            const label = document.querySelector('label[for="' + input.id + '"]');
+            if (label) {
+                label.classList.add('disabled');
+            }
+        }
+    });
+});
+
