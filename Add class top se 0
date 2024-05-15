@@ -1,0 +1,12 @@
+ $(document).ready(function() {
+      $(window).on('resize scroll', function() {
+          var customerOffsetTop = $('.customer').offset().top;
+          var scrollTop = $(window).scrollTop();
+
+          if (customerOffsetTop <= scrollTop) {
+              $('.page-header').addClass('sticky-header');
+          } else {
+              $('.page-header').removeClass('sticky-header');
+          }
+      }).trigger('scroll');
+  });
