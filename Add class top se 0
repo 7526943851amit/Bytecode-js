@@ -10,3 +10,22 @@
           }
       }).trigger('scroll');
   });
+
+
+        $(window).scroll(function(){
+                          var divHeight = $('#product-list').offset().top - 30;
+                             if ($(this).scrollTop() > divHeight) {
+                                $('.header-col').addClass('sticky');
+                             } else if ($(this).scrollTop() < divHeight){
+                                $('.header-col').removeClass('sticky');
+                             }
+                         });
+           $(window).scroll(function() {
+          var $footer = $('.footer');
+          var footerTop = $footer.offset().top - 40;
+          var scrollTop = $(this).scrollTop();
+
+          if (scrollTop >= footerTop) {
+              $('.header-col').removeClass('sticky');
+          }
+      });
