@@ -1,0 +1,24 @@
+$(document).ready(function() {
+      $(window).on('scroll', function() {
+          var customerOffsetTop = $('.customer').offset().top;
+          var scrollTop = $(window).scrollTop();
+
+          if (customerOffsetTop <= scrollTop) {
+              $('.page-header').addClass('sticky-header');
+          } else {
+              $('.page-header').removeClass('sticky-header');
+          }
+      }).trigger('scroll');
+  });
+    $(document).ready(function() {
+          $(window).on('scroll', function() {
+              var footerOffsetTop = $('.footer').offset().top ;
+              var scrollTop = $(window).scrollTop();
+
+              if (footerOffsetTop <= scrollTop) {
+                  $('.page-header').removeClass('sticky-header');
+              } else {
+                  // $('.page-header').removeClass('sticky-header');
+              }
+          }).trigger('scroll');
+      });
