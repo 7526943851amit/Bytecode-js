@@ -1,0 +1,13 @@
+const passwordInput = document.querySelector('input[name="customer[password]"]');
+        const openEye = document.querySelector('.open');
+        const closeEye = document.querySelector('.close');
+        openEye.addEventListener('click', () => {
+            passwordInput.type = 'text';
+            openEye.classList.add('hidden');
+            closeEye.classList.remove('hidden');
+        });
+        closeEye.addEventListener('click', () => {
+            passwordInput.type = 'password';
+            closeEye.classList.add('hidden');
+            openEye.classList.remove('hidden');
+        });
