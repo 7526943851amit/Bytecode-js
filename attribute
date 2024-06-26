@@ -1,0 +1,17 @@
+<div id="mosaic-details" class="mosaic_design_open">
+  <a href="/collections/mosaic-designs" class="">MOSAIC DESIGNS</a>
+</div>
+
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+      const anchor = document.querySelector('a[href="/collections/mosaic-designs"]');
+      const details = document.getElementById('mosaic-details');
+
+      anchor.addEventListener('mouseover', function() {
+          details.setAttribute('open', '');
+      });
+      anchor.addEventListener('mouseout', function() {
+        details.removeAttribute('open'); 
+    });
+  });
+</script>
