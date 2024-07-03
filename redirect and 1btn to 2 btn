@@ -1,0 +1,11 @@
+document.getElementById('reorder-button3').addEventListener('click', function() {
+   console.log("dfhghfg");
+    document.getElementById('reorder-button2').click();
+  });
+
+ const currentURL = window.location.href;
+
+            // Check if the current URL contains '/account/addresses' and redirect if it does
+            if (currentURL.includes('/account/addresses')) {
+                window.location.href = 'https://kbfmore.com/account';
+            }
