@@ -1,0 +1,8 @@
+ const details = document.querySelector('.hover_menu');
+    const summary = details.querySelector('summary');
+    summary.addEventListener('mouseover', () => {
+      details.setAttribute('open', ''); 
+    });
+    details.addEventListener('mouseleave', () => {
+      details.removeAttribute('open'); 
+    });
