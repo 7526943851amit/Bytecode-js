@@ -1,0 +1,24 @@
+<span class="OYPEnA counter font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" style="color: rgb(0, 0, 0); font-weight: 400; font-kerning: none;" data-target="28">28</span>
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const counters = document.querySelectorAll('.counter');
+
+  counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const increment = target / 200; // Increment rate, adjust if needed
+      let current = 0;
+
+      const updateCounter = () => {
+          if (current < target) {
+              current += increment;
+              counter.innerText = Math.ceil(current);
+              requestAnimationFrame(updateCounter);
+          } else {
+              counter.innerText = target;
+          }
+      };
+
+      updateCounter();
+  });
+});
