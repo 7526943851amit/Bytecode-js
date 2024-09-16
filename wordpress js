@@ -8,3 +8,31 @@ if (window.location.href === 'https://dev.leadbx.com/blog/') {
     });
 }
 /* end developer code */
+
+
+
+
+
+
+
+
+
+
+
+    /* developer code */
+
+if (window.location.href === '<?php echo home_url();?>/blog/') {
+    const linksToUpdate = document.querySelectorAll('a[href="#benefits"], a[href="#ebook-industrys"], a[href="#pricing_table"]');
+    linksToUpdate.forEach(link => {
+        const newHref = link.getAttribute('href').replace('#', '<?php echo home_url(); ?>/#');
+        link.setAttribute('href', newHref);
+    });
+}
+else if (window.location.href === '<?php echo home_url();?>/10-website-improvements-to-generate-more-leads-sales-and-revenue/') {
+    const linksToUpdate = document.querySelectorAll('a[href="#benefits"], a[href="#ebook-industrys"], a[href="#pricing_table"]');
+    linksToUpdate.forEach(link => {
+        const newHref = link.getAttribute('href').replace('#', '<?php echo home_url(); ?>/#');
+        link.setAttribute('href', newHref);
+    });
+}
+/* end developer code */
